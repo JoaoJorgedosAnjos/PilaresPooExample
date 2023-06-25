@@ -1,18 +1,21 @@
-public class Carro {
+public class Carro extends Veiculo {
+    //Encapsulamento
+    //Só tenho um metodo publico, que vai ser acessado pelo usuario
+    //os outros dois são privados e só podem ser acessdos dentro da classe
 
-    private String nome;
-    private String marca;
-
-    public String getNome() {
-        return nome;
+    //Herança
+    //classe extends (classe que vamos pegar os atributos)
+    //Dessa forma não precisar reescrever os mesmo atributos, getter e setters para carro e moto
+    //Com a classe veiculo podemos deixar os atributos em comum dentro dela e usar nas duas
+    public void ligar(){
+        conferirCambio();
+        conferirCombustivel();
+        System.out.println("CARRO LIGADO");
     }
-
-    public String getMarca() {
-        return marca;
+    private void conferirCombustivel(){
+        System.out.println("Conferindo combustivél");
     }
-
-    public Carro(String nome, String marca) {
-        this.nome = nome;
-        this.marca = marca;
+    private void conferirCambio(){
+        System.out.println("Conferindo cambio em P");
     }
 }
